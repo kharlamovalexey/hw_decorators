@@ -5,9 +5,10 @@ import datetime
 def logger(old_function):
 
     def new_function(*args, **kwargs):
-        res =  old_function(*args, **kwargs)
+        start_dt = str(datetime.datetime.now())        
+        res =  old_function(*args, **kwargs)        
         with open('main.log', 'at', encoding = 'utf8') as f:
-            f.write(str(datetime.datetime.now()) + f' {old_function.__name__} {args} {kwargs} {res} \n')
+            f.write(f'{start_dt} {old_function.__name__} {args} {kwargs} {res} \n')            
         return res
     
     return new_function
