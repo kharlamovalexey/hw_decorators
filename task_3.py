@@ -4,7 +4,7 @@ import fake_headers
 import json
 from task_2 import logger
 
-@logger(path='task_3.log')
+@logger(path='log_task_3.log')
 def vacancies_to_file(pages=5, file_name='vacancies_list.json'):
 
     headers = fake_headers.Headers(browser='firefox', os='win')
